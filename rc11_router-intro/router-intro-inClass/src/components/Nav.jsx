@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom"
 
 const Nav = () => {
   return (
@@ -10,10 +10,10 @@ const Nav = () => {
         <Link to="/instructors">Instructors</Link>
       </li>
       <li>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact" style={({isActive}) => ({color:isActive && "red"}) } >Contact</NavLink>
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
