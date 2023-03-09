@@ -1,8 +1,18 @@
 import React from 'react'
-
-const Card = () => {
+import { CardButton, CardContainer, CardHeader, CardImg } from './Card.style'
+import defaultImg from "../../assets/book.jpg"
+import { useNavigate } from 'react-router-dom'
+const Card = ({item}) => {
+  const navigate = useNavigate()
   return (
-    <div>Card</div>
+
+    <CardContainer>
+      <CardHeader>
+{item.volume.info.title}
+      </CardHeader>
+      <CardImg src={item.volume.info.imageLinks?.smallThumbnail || {defaultImg}}/>
+      <CardButton onClick={()=> navigate(`/detail/${item.id}`,{state:item}) }>View More</CardButton>
+    </CardContainer>
   )
 }
 
