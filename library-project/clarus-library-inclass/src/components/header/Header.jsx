@@ -20,9 +20,9 @@ const Header = ({ setQuery, setSelectType, getData }) => {
       <HeaderTitle>BOOKS OR MAGAZINES</HeaderTitle>
       <HeaderForm onSubmit={handleSubmit}>
         <SearchInput
-          onChange={(e) => setQuery(e.target.value)}
           type="text"
           placeholder="name"
+          onChange={(e) => setQuery(e.target.value)}
           required
         />
         <SelectBox onChange={(e) => setSelectType(e.target.value)}>
