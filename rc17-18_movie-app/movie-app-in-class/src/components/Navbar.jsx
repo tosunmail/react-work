@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/icons/avatar.png"
+import avatar from "../assets/icons/avatar.png";
 import { AuthContext } from "../context/AuthContext";
+import Switch from "./Switch";
 const Navbar = () => {
-  const {currentUser , logout} = useContext(AuthContext)
+  const { currentUser, logout } = useContext(AuthContext);
   // const currentUser = {displayName: "Tarik Kocovali"}
   return (
     <div>
@@ -19,22 +20,25 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="relative flex items-center">
-            {currentUser && <h5 className="mr-2 capitalized">{currentUser.displayName}</h5>}
+            {currentUser && (
+              <h5 className="mr-2 capitalized">{currentUser.displayName}</h5>
+            )}
+           <Switch/>
             <div className="relative" data-te-dropdown-ref="">
               <span
                 className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-             
                 id="dropdownMenuButton2"
                 role="button"
                 data-te-dropdown-toggle-ref=""
                 aria-expanded="false"
               >
                 <img
-                  src={currentUser.photoURL || avatar }
+                  src={currentUser.photoURL || avatar}
                   className="rounded-full"
                   style={{ height: 25, width: 25 }}
                   alt=""
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
               </span>
               <ul
