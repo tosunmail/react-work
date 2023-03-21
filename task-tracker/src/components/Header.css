@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: rgb(255, 216, 216);
+}
+
+.header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 40px;
+  padding: 30px;
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 0.308584686774942) 100%
+  );
+  font-family: "Climate Crisis", cursive;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  margin-top: 80px;
+  box-shadow: 0 0 10px black;
+}
+.header:hover {
+  transform: scale(1.01);
+  transition: transform 0.7s;
+}
+
+.showtask {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(188, 166, 209);
+  color: rgb(59, 19, 19);
+  font-weight: 800;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(0.98);
+}
+.inpt {
+  margin-top: 14px;
+  padding: 7px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+.inpt:hover {
+  transform: scale(1.02);
+  transition: transform 1s;
+}
+.btnSave {
+  padding: 7px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+}
+.btnSave:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 1s;
+}
+ul {
+  margin-left: 5px;
+}
+li {
+  color: white;
+
+  border-radius: 6px;
+  margin-top: 20px;
+  height: 30px;
+  list-style-type: decimal;
+}
