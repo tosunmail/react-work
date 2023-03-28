@@ -15,13 +15,13 @@ const useAuthCall = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const BASE_URL = "https://12277.fullstack.clarusway.com"
+  const BASE_URL = "https://12277.fullstack.clarusway.com/"
 
   const login = async (userInfo) => {
     dispatch(fetchStart())
     try {
       const { data } = await axios.post(
-        `${BASE_URL}/account/auth/login/`,
+        `${BASE_URL}account/auth/login/`,
         userInfo
       )
       dispatch(loginSuccess(data))
@@ -37,7 +37,7 @@ const useAuthCall = () => {
   const logout = async () => {
     dispatch(fetchStart())
     try {
-      await axios.post(`${BASE_URL}/account/auth/logout/`)
+      await axios.post(`${BASE_URL}account/auth/logout/`)
       dispatch(logoutSuccess())
       toastSuccessNotify("Logout performed")
       navigate("/")
@@ -51,7 +51,7 @@ const useAuthCall = () => {
     dispatch(fetchStart())
     try {
       const { data } = await axios.post(
-        `${BASE_URL}/account/register/`,
+        `${BASE_URL}account/register/`,
         userInfo
       )
       dispatch(registerSuccess(data))
