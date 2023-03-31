@@ -5,6 +5,7 @@ import LoadingButton from "@mui/lab/LoadingButton"
 import { Form } from "formik"
 import { useSelector } from "react-redux"
 import { object, string } from "yup"
+import { Button } from "@mui/material"
 
 export const loginScheme = object({
   email: string()
@@ -49,14 +50,14 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
           helperText={touched.password && errors.password}
           error={touched.password && Boolean(errors.password)}
         />
-        <LoadingButton
+        <Button
           loading={loading}
           loadingPosition="center"
           variant="contained"
           type="submit"
         >
           Submit
-        </LoadingButton>
+        </Button>
       </Box>
     </Form>
   )
