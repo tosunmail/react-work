@@ -13,6 +13,7 @@ export default function FirmCard({ firm, setOpen, setInfo }) {
   const { deleteStockData } = useStockCall();
   return (
     <Card
+    elevation={10}
       sx={{
         p: 2,
         width: "300px",
@@ -20,6 +21,7 @@ export default function FirmCard({ firm, setOpen, setInfo }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        m : 3
       }}
     >
       <CardContent>

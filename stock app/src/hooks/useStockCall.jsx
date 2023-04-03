@@ -4,7 +4,7 @@ import { fetchStart } from "../features/authSlice";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFail } from "../features/authSlice";
-import { getSuccess } from "../features/stockSlice";
+import { getSuccess , getProCatBrandSuccess } from "../features/stockSlice";
 import useAxios from "../features/useAxios";
 
   import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
@@ -66,6 +66,7 @@ const useStockCall = () => {
       toastErrorNotify(`${url} can not be Edited`)
     }
   };
+  
   const getProCatBrand = async () => {
     dispatch(fetchStart())
     try {
@@ -76,7 +77,7 @@ const useStockCall = () => {
       ])
 
       dispatch(
-        getProCatBrand([products?.data, categories?.data, brands?.data])
+        getProCatBrandSuccess([products?.data, categories?.data, brands?.data])
       )
     } catch (error) {
       console.log(error)

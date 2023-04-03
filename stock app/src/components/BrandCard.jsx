@@ -11,6 +11,7 @@ import useStockCall from "../hooks/useStockCall";
 
 export default function brandsCard({ brands, setOpen, setInfo }) {
   const { deleteStockData } = useStockCall();
+
   return (
     <Card
       sx={{
@@ -21,8 +22,9 @@ export default function brandsCard({ brands, setOpen, setInfo }) {
         flexDirection: "column",
         justifyContent: "space-between",
       }}
+      elevetation={10}
     >
-      <CardContent>
+      <CardContent className="card">
         <Typography gutterBottom variant="h5" component="div">
           {brands?.name}
         </Typography>
@@ -40,8 +42,8 @@ export default function brandsCard({ brands, setOpen, setInfo }) {
         <EditIcon
           sx={btnStyle}
           onClick={() => {
-             setOpen(true) 
-             setInfo(brands);
+            setOpen(true);
+            setInfo(brands);
           }}
         />
         <DeleteOutlineIcon

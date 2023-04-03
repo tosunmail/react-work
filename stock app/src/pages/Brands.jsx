@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FirmCard from "../components/FirmCard";
-import FirmModal from "../components/modals/FirmModal";
+import BrandModal from "../components/modals/BrandModal";
 import useStockCall from "../hooks/useStockCall";
 import { flex } from "../styles/globalStyle";
 
@@ -32,8 +32,7 @@ const Brands = () => {
       <Button onClick={handleOpen} variant="contained">
         New Brand
       </Button>
-      <FirmModal
-        open={open}
+      <BrandModal        open={open}
         handleClose={handleClose}
         info={info}
         setInfo={setInfo}
