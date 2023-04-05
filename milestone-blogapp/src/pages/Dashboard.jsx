@@ -9,9 +9,8 @@ function CardComponent() {
 
   const getData = async () => {
     try {
-      const responce = await axios(API_KEY);
-      console.log(responce.data);
-      setData(responce.data);
+      const {data} = await axios(API_KEY);
+      setData(data);
     } catch (error) {
       console.log("Error");
     }
@@ -22,15 +21,19 @@ function CardComponent() {
 
   return (
     <div>
-        <Grid container>
-               {data.map((item) => (
-    
-              <Card key={item.id} item={item} />
-        
-      
-      ))}
-        </Grid>
-   
+      <Grid
+        sx={{
+          gap: 10,
+          justifyContent: "center",
+          alignItems: "center",
+
+        }}
+        container
+      >
+        {data.map((item) => (
+          <Card  key={item.id} item={item} />
+        ))}
+      </Grid>
     </div>
   );
 }

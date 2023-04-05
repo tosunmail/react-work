@@ -5,27 +5,53 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
 
 export default function CardBlog({ item }) {
+  const [date, setDate] = React.useState(item.publish_date);
+
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3}>
-           <Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" height="140" image={item.image} />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Card sx={{ boxShadow: 24, mt: 10 , maxWidth:"400px", maxHeight:"550px", minHeight:"550px"}}>
+      <CardMedia
+        component="img"
+        height="250px"
+        image={item.image}
+        style={{ objectFit: 'contain' , padding:"5px"  }}
+      /> 
+      <CardContent sx={{height:"230px"}}>
+        <Typography
+          sx={{ color: "green" }}
+          gutterBottom
+          variant="h5"
+          component="div"
+        >
           {item?.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {item?.content}
         </Typography>
+        <Typography
+          sx={{ mt: 3, fontWeight: "bold" }}
+          variant="body2"
+          color="text.secondary"
+        >
+          {formattedDate}
+        </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{justifyContent:"space-between"}}>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <div>
+        <Button  variant="contained">
+        Read More
+      </Button>
+
+        </div>
       </CardActions>
     </Card>
-    </Grid>
- 
   );
 }
