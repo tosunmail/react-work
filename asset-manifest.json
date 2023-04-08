@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/tosunmail/stock-app/static/css/main.a1f1f997.css",
+    "main.js": "/tosunmail/stock-app/static/js/main.036e4273.js",
+    "static/media/result.svg": "/tosunmail/stock-app/static/media/result.eebf37999ce8a048847f3182de8d255a.svg",
+    "index.html": "/tosunmail/stock-app/index.html",
+    "main.a1f1f997.css.map": "/tosunmail/stock-app/static/css/main.a1f1f997.css.map",
+    "main.036e4273.js.map": "/tosunmail/stock-app/static/js/main.036e4273.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1f1f997.css",
+    "static/js/main.036e4273.js"
+  ]
+}
