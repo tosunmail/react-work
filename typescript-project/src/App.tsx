@@ -5,6 +5,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import Navbar from "./components/Navbar";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div className="bg-gray-400 min-h-screen ">
@@ -17,6 +18,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </Provider>
+      <ToastContainer/>
     </div>
   );
 }
