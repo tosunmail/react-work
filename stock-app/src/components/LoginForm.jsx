@@ -9,16 +9,16 @@ import { Button } from "@mui/material"
 
 export const loginScheme = object({
   email: string()
-    .email("Lutfen valid bir email giriniz")
-    .required("Email zorunludur"),
+    .email("Please enter a valid email adress")
+    .required("Email is required"),
   password: string()
-    .required("password zorunludur")
-    .min(8, "password en az 8 karakter olmalıdır")
-    .max(20, "password en fazla 20 karakter olmalıdır")
-    .matches(/\d+/, "Password bir sayı içermelidir")
-    .matches(/[a-z]/, "Password bir küçük harf içermelidir")
-    .matches(/[A-Z]/, "Password bir büyük harf içermelidir")
-    .matches(/[!,?{}><%&$#£+-.]+/, "Password bir özel karakter içermelidir"),
+  .required("password zorunludur")
+  .min(8, "password must contain at least 8 character")
+  .max(20, "password can be maximum 20 character")
+  .matches(/\d+/, "Password must contain a number")
+  .matches(/[a-z]/, "Password must contain lowercase")
+  .matches(/[A-Z]/, "Password must contain uppercase")
+  .matches(/[!,?{}><%&$#£+-.]+/, "Password must contain a special character"),
 })
 
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
