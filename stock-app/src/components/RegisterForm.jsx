@@ -6,22 +6,22 @@ import { object, string } from "yup"
 
 export const registerSchema = object({
   username: string()
-    .max(10, "Kullanıcı adı 10 karakterden az olmalıdır.")
+    .max(10, "username must be lower than 10 character")
     .required(),
-  first_name: string().max(20, "İsim 20 karakterden az olmalıdır.").required(),
+  first_name: string().max(20, "Name can be maximum 20 character").required(),
   last_name: string()
-    .max(20, "Soyisim 30 karakterden az olmalıdır.")
+    .max(20, "Lastname can be maximum 20 character")
     .required(),
 
   email: string().email().required(),
   password: string()
-    .required("password zorunludur")
-    .min(8, "password en az 8 karakter olmalıdır")
-    .max(20, "password en fazla 20 karakter olmalıdır")
-    .matches(/\d+/, "Password bir sayı içermelidir")
-    .matches(/[a-z]/, "Password bir küçük harf içermelidir")
-    .matches(/[A-Z]/, "Password bir büyük harf içermelidir")
-    .matches(/[!,?{}><%&$#£+-.]+/, "Password bir özel karakter içermelidir"),
+    .required("password is required")
+    .min(8, "password must contain at least 8 character")
+    .max(20, "password can be maximum 20 character")
+    .matches(/\d+/, "Password must contain a number")
+    .matches(/[a-z]/, "Password must contain lowercase")
+    .matches(/[A-Z]/, "Password must contain uppercase")
+    .matches(/[!,?{}><%&$#£+-.]+/, "Password must contain a special character"),
 })
 
 const SignUpForm = ({ values, handleChange, errors, touched, handleBlur }) => {
